@@ -37,14 +37,14 @@ class FileStorage:
     def get(self, cls, id):
         """retrieves an object of a class with id"""
         if cls is not None:
-            res = list(
+            obj = list(
                 filter(
                     lambda x: type(x) is cls and x.id == id,
                     self.__objects.values()
                 )
             )
-            if res:
-                return res[0]
+            if obj:
+                return obj[0]
         return None
 
     def count(self, cls=None):
